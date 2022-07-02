@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/table-generator/static/css/main.6916605b.css",
+    "main.js": "/table-generator/static/js/main.51b97562.js",
+    "index.html": "/table-generator/index.html",
+    "main.6916605b.css.map": "/table-generator/static/css/main.6916605b.css.map",
+    "main.51b97562.js.map": "/table-generator/static/js/main.51b97562.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6916605b.css",
+    "static/js/main.51b97562.js"
+  ]
+}
