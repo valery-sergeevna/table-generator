@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/table-generator/static/css/main.6916605b.css",
+    "main.css": "/table-generator/static/css/main.9b8d3f37.css",
     "main.js": "/table-generator/static/js/main.cdd70725.js",
     "index.html": "/table-generator/index.html",
-    "main.6916605b.css.map": "/table-generator/static/css/main.6916605b.css.map",
+    "main.9b8d3f37.css.map": "/table-generator/static/css/main.9b8d3f37.css.map",
     "main.cdd70725.js.map": "/table-generator/static/js/main.cdd70725.js.map"
   },
   "entrypoints": [
-    "static/css/main.6916605b.css",
+    "static/css/main.9b8d3f37.css",
     "static/js/main.cdd70725.js"
   ]
 }
