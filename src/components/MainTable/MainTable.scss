@@ -2,8 +2,13 @@
   border-radius: 4px;
   overflow-x: auto;
   margin: 20px 40px 40px;
+  @media(max-width:700px){
+    margin-left: auto;
+    margin-right: auto;
+  }
   @media(max-width:576px){
-    margin: 15px 5px;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
   .wrapper{
     display: flex;
@@ -40,7 +45,9 @@
     width: 600px;
     margin-bottom: 20px;
     @media(max-width:700px){
-      width: 100%;
+      width: 98%;
+      margin-left: auto;
+      margin-right: auto;
     }
     &__content{
       width: 100%;

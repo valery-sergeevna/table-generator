@@ -2,38 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5b67ff9-8b46-4014-a3b9-e6279339c8f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/Table.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Alert/Alert.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Alert/Alert.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FormState/CreateForm/CreateFrom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FormState/EditForm/EditForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FormState/FormState.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FormState/FormState.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MainTable/MainTable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MainTable/MainTable.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/detectMob.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/generateKey.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Home/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Home/Home.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/tableReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/usersReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FormTwo/FormTwo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/options.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/validation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormState/CreateForm/CreateFrom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormState/CreateForm/CreateFrom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormState/EditForm/EditForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormState/EditForm/EditForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormState/FormState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormState/FormState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormState/FormState.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormState/FormState.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainTable/MainTable.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainTable/MainTable.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,12 +71,17 @@
       <workItem from="1656596265545" duration="9950000" />
       <workItem from="1656606329268" duration="22573000" />
       <workItem from="1656659624529" duration="74000" />
-      <workItem from="1656687691281" duration="30735000" />
+      <workItem from="1656687691281" duration="39615000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../test1/test-company/node_modules/karma/config.tpl.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

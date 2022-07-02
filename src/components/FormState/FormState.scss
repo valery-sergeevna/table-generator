@@ -103,4 +103,28 @@
       }
     }
   }
+  &-two{
+    width: 600px;
+    margin-bottom: 50px;
+    @media(max-width:700px){
+      width: 98%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    & &__container{
+      display: flex;
+      justify-content: space-between;
+    }
+    & &__block{
+      width: 48%;
+      margin-left: 5px;
+      margin-right: 5px;
+      & + div{
+        width: 48%;
+        margin-left: 5px;
+        margin-right: 5px;
+        height: 45px;
+      }
+    }
+  }
 }
