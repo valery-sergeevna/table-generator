@@ -1,5 +1,6 @@
 {
   "name": "react-table",
+  "homepage": "https://valery-sergeevna.github.io/table-generator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
