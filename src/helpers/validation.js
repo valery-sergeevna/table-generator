@@ -6,12 +6,12 @@ export const validate = (user, setErrors, setErrorsEdited, editFlag) => {
     if(user.name.length < 2){
         nameError = "Name at least have 2 letters";
     }else if(!regName.test(user.name)){
-        nameError = "The field 'Name' must contain only letters ";
+        nameError = "The field 'Name' must contain only English letters ";
     }
     if(user.surname.length < 2){
         surnameError = "Surname at least have 2 letters";
     }else if(!regName.test(user.surname)){
-        surnameError = "The field 'Surname' must contain only letters ";
+        surnameError = "The field 'Surname' must contain only English letters ";
     }
     if(+user.age === 0){
         ageError = "Please write a number greater than 0";
