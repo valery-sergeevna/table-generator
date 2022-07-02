@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {generateKey} from "../helpers/generateKey";
 import * as PropTypes from "prop-types";
 import {IS_MOBILE} from '../helpers/detectMob';
@@ -26,7 +26,7 @@ export const Table = props => {
                     </tr>
                     </thead>
                     <tbody>
-                        {table.map(user => <tr key={generateKey(user.surname + '_' + user.name)}>
+                        {table.map(user => <tr key={generateKey(user.surname + user.city.label + user.name + user.age)}>
                             <td className="table__name">{user.name}</td>
                             <td className="table__surname">{user.surname}</td>
                             <td className="table__age">{user.age}</td>
@@ -63,7 +63,7 @@ Table.propTypes = {
         PropTypes.shape({
             name: PropTypes.string.isRequired,
             surname: PropTypes.string.isRequired,
-            age: PropTypes.number.isRequired,
+            age: PropTypes.string.isRequired,
             city: PropTypes.object.isRequired,
         }).isRequired
     ).isRequired,

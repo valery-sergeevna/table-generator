@@ -1,25 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-$color_grey: #868A8D;
-$color_white: #FFFFFF;
-$btn_disabled: #C2CBD1;
-$btn_active: #1493FE;
-$color_black: #000000;
-$border-table: #EBEBEB;
-$table_head: #0A508B;
-$color_red: #EB5E58;
-
-@mixin limit-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-@mixin inputField ($width, $padding, $colorText) {
-  width: $width;
-  padding: $padding;
-  color: $colorText;
-}
-
 * {
   box-sizing: border-box;
 }

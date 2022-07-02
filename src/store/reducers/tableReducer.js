@@ -46,7 +46,7 @@ export const tableReducer = (state = initialState, action) => {
             return {
                 ...state,
                 copies: action.payload && action.payload.table.length === 1 ?
-                    state.copies.filter((copy) => copy.id !== action.payload)
+                    state.copies.filter(copy => copy.id !== action.payload.id)
                     : state.copies.map(copy => {
                     if(copy.id === action.payload.id) {
                         return {
@@ -77,7 +77,6 @@ export const tableReducer = (state = initialState, action) => {
             };
         }
         case "EDIT_USER_FROM_COPY": {
-            console.log(action.payload, 'EDIT_USER_FROM_COPY')
             return {
                 ...state,
                 copies: [...state.copies.map(copy => {

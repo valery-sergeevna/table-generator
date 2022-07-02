@@ -1,3 +1,7 @@
+$color_white: #FFFFFF;
+$error_color: #EB5E58;
+$focus_color: #2684FF;
+
 .form{
   width: 280px;
   background: white;
@@ -11,7 +15,7 @@
   }
   .field{
     font-family: inherit;
-    background: #FFFFFF;
+    background: $color_white;
     border: 1px solid #E6ECEF;
     border-radius: 4px;
     width:100%;
@@ -21,21 +25,25 @@
     font-weight: 400;
     font-size: 12px;
     &:focus{
-      border-color:#1487e6;
+      border-color:$focus_color;
+      box-shadow: 0 0 0 1px $focus_color;
       &::placeholder{
         opacity:0;
       }
     }
+    &:hover{
+      border-color: #9ea2a5;
+    }
     &.error{
-      border: 1px solid #EB5E58;
+      border: 1px solid $error_color;
       margin-bottom: 0;
     }
   }
   .button{
     font-family: inherit;
     font-weight: 700;
-    color:#FFFFFF;
-    background-color: #1493FE;
+    color:$color_white;
+    background-color: $focus_color;
     border-radius: 4px;
     width:100%;
     text-align: center;
@@ -44,20 +52,21 @@
     cursor: pointer;
     transition: background 0.2s ease-in-out;
     &:disabled{
+      cursor: not-allowed;
       background-color: #C2CBD1;
       &:hover{
-        background-color: #cdd6dc;
+        background-color: #C2CBD1;
       }
     }
     &:hover{
-      background-color: #1487e6;
+      background-color: $focus_color;
     }
   }
   &__container{
     position: relative;
   }
   &__error{
-    color: #EB5E58;
+    color: $error_color;
     font-weight: 400;
     font-size: 10px;
     margin-top:0;
@@ -70,6 +79,7 @@
       line-height: 14px;
       color: #868A8D;
       cursor: pointer;
+      padding:13px 5px;
       &:hover{
         color: #212229;
         font-weight: 700;
@@ -105,7 +115,7 @@
   }
   &-two{
     width: 600px;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
     @media(max-width:700px){
       width: 98%;
       margin-left: auto;

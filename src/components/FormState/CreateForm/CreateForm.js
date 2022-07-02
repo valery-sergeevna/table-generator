@@ -1,26 +1,30 @@
-import React, {useEffect} from "react";
+import React from "react";
 import * as PropTypes from "prop-types";
 import Select from 'react-select';
+import {customStyles} from "../../../helpers/optionStyles";
 export const CreateForm = props => {
     const {addUser, errors, user, options, onChange, formTwoFlag} = props;
+
+
     return (
         <form className={`form ${formTwoFlag ? 'form-two' : ''}`} onSubmit={(e)=>addUser(e)}>
             <div className="form__container form-two__container">
                 <div className="form-two__block">
-                    <input type="text" name="name" className={`form__input field ${errors.name ? 'error' : ''}`} placeholder="Name" value={user.name} onChange={onChange}/>
-                    {errors.name && <p className="form__error">{errors.name}</p>}
+                    <input type="text" name="name" className={`form__input field ${errors.nameError ? 'error' : ''}`} placeholder="Name" value={user.name} onChange={onChange}/>
+                    {errors.nameError && <p className="form__error">{errors.nameError}</p>}
                 </div>
                 <div className="form-two__block">
-                    <input type="text" name="surname" className={`form__input field ${errors.surname ? 'error' : ''}`} placeholder="Surname" value={user.surname} onChange={onChange}/>
-                    {errors.surname && <p className="form__error">{errors.surname}</p>}
+                    <input type="text" name="surname" className={`form__input field ${errors.surnameError ? 'error' : ''}`} placeholder="Surname" value={user.surname} onChange={onChange}/>
+                    {errors.surnameError && <p className="form__error">{errors.surnameError}</p>}
                 </div>
             </div>
             <div className="form__container form-two__container">
                 <div className="form-two__block">
-                    <input type="text" name="age" className={`form__input field ${errors.age ? 'error' : ''}`}  placeholder="Age" value={user.age} onChange={onChange}/>
-                    {errors.age && <p className="form__error">{errors.age}</p>}
+                    <input type="text" name="age" className={`form__input field ${errors.ageError ? 'error' : ''}`}  placeholder="Age" value={user.age} onChange={onChange}/>
+                    {errors.ageError && <p className="form__error">{errors.ageError}</p>}
                 </div>
                 <Select
+                    styles={customStyles}
                     placeholder="Select Option"
                     value={user.city}
                     options={options}
@@ -38,5 +42,6 @@ CreateForm.propTypes = {
     errors: PropTypes.object.isRequired,
     options: PropTypes.array.isRequired,
     addUser: PropTypes.func.isRequired,
-    onChange: PropTypes.func,
+    onChange: PropTypes.func.isRequired,
+    formTwoFlag: PropTypes.bool,
 };

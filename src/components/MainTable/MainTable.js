@@ -10,13 +10,15 @@ import {
 } from '../../store/reducers/tableReducer';
 import {Table} from "../../UI/Table";
 import {saveUserAction} from "../../store/reducers/usersReducer";
+import * as PropTypes from "prop-types";
+import FormTwo from "../FormTwo/FormTwo";
 
-const MainTable = ({showModalDelete, showEditForm, lifting}) => {
+const MainTable = (props) => {
+    const {showEditForm, lifting, setAlert} = props;
     const originalTable = useSelector(state=>state.tables.originalTable);
     const editedUser = useSelector(state=>state.users.editedUser);
     const copies = useSelector(state=>state.tables.copies);
     const dispatch = useDispatch();
-    const [userId, setUserId] = useState();
     const [tableEditId, setTableEditId] = useState(null);
 
     useEffect(()=>{
@@ -28,18 +30,19 @@ const MainTable = ({showModalDelete, showEditForm, lifting}) => {
                 dispatch(editUserFromOriginal(editedUser));
                 dispatch(saveUserAction({}));
             }
+            setAlert("EDIT_USER");
         }
     }, [lifting]);
 
     const copyTable = (data, index, copyFromCopies) => {
         dispatch(copyTableAction(data.table, index, copyFromCopies));
-        console.log(copies)
+        setAlert("COPY_TABLE");
     }
-    const deleteTableCopy = (id) => {
-        dispatch(deleteTableAction(id))
-    }
-    const saveUserId = (id) => {
-        setUserId(id);
+    const deleteTableCopy = (alertAction, id) => {
+        if(id){
+            dispatch(deleteTableAction(id));
+        }
+        setAlert(alertAction);
     }
     const deleteUser = (elem, id) => {
         if(elem.id === originalTable.id){
@@ -47,12 +50,12 @@ const MainTable = ({showModalDelete, showEditForm, lifting}) => {
         }else{
             dispatch((deleteUserFromCopies(id, elem)));
         }
+        setAlert("DELETE_USER");
     }
     const editUserObj = (user, id) => {
         showEditForm(true);
         dispatch(saveUserAction(user));
         setTableEditId(id);
-        console.log(copies, 'click')
     }
 
     return (
@@ -63,21 +66,26 @@ const MainTable = ({showModalDelete, showEditForm, lifting}) => {
                        copyTable={()=>{copyTable(originalTable)}}
                        key={originalTable.id}
                        deleteUser={(id)=>deleteUser(originalTable, id)}
-                       editUserObj={(user)=>editUserObj(user)}>
-                </Table>
+                       editUserObj={(user)=>editUserObj(user)}
+                       deleteTableCopy={()=>{deleteTableCopy("REJECT")}}/>
                 :
                 <h4>Users and tables are not found. Please fill out the form.</h4>}
-                {copies && !!copies.length && copies.map((elem, index)=>
-                    (<Table
-                        table={elem.table}
-                        key={elem.id}
-                        copyTable={()=>{copyTable(elem, index, true)}}
-                        deleteTableCopy={()=>{deleteTableCopy(elem.id)}}
-                        deleteUser={(id)=>deleteUser(elem, id)}
-                        editUserObj={(user)=>editUserObj(user, elem.id)}>
-                </Table>))}
+            {copies && !!copies.length && copies.map((elem, index)=>
+                (<Table
+                    table={elem.table}
+                    key={elem.id}
+                    copyTable={()=>{copyTable( elem, index, true)}}
+                    deleteTableCopy={()=>{deleteTableCopy("DELETE_TABLE", elem.id)}}
+                    deleteUser={(id)=>deleteUser(elem, id)}
+                    editUserObj={(user)=>editUserObj(user, elem.id)}/>))}
         </div>
     );
 };
 
 export default MainTable;
+
+MainTable.propTypes = {
+    showEditForm:PropTypes.func.isRequired,
+    lifting: PropTypes.bool.isRequired,
+    setAlert: PropTypes.func.isRequired
+};

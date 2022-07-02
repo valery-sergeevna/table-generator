@@ -2,17 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5b67ff9-8b46-4014-a3b9-e6279339c8f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/FormTwo/FormTwo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/options.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/validation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FormState/CreateForm/CreateFrom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormState/CreateForm/CreateFrom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/optionStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Alert/Alert.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Alert/Alert.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Alert/Alert.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Alert/Alert.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormState/CreateForm/CreateFrom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormState/CreateForm/CreateForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FormState/EditForm/EditForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormState/EditForm/EditForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FormState/FormState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormState/FormState.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FormState/FormState.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormState/FormState.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormTwo/FormTwo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormTwo/FormTwo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainTable/MainTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainTable/MainTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MainTable/MainTable.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainTable/MainTable.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/tableReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/tableReducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +44,9 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tabit--main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-form" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.2.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -71,7 +82,7 @@
       <workItem from="1656596265545" duration="9950000" />
       <workItem from="1656606329268" duration="22573000" />
       <workItem from="1656659624529" duration="74000" />
-      <workItem from="1656687691281" duration="39615000" />
+      <workItem from="1656687691281" duration="61135000" />
     </task>
     <servers />
   </component>

@@ -1,23 +1,22 @@
 import React, {useState} from 'react';
 import './Home.scss'
-import {MainTable, FormState} from "../../components";
-import Alert from "../../components/Alert/Alert";
+import {MainTable, FormState, Alert, FormTwo} from "../../components";
 import {useDispatch, useSelector} from "react-redux";
 import {createUserAction, saveUserAction} from "../../store/reducers/usersReducer";
 import {createTableAction} from "../../store/reducers/tableReducer";
 import {validate} from '../../helpers/validation';
 import {options} from '../../helpers/options';
-import FormTwo from "../../components/FormTwo/FormTwo";
 
 const Home = () => {
-    const [modalDelete, showModalDelete] = useState(false);
+    const [alert, setAlert] = useState(false);
     const [editForm, showEditForm] = useState(false);
     const [lifting, setLifting] = useState(false);
     const dispatch = useDispatch();
 
     const list = useSelector(state=>state.users.usersList);
-    const copies = useSelector(state=>state.tables.copies);
     const editedUserFromTable = useSelector(state=>state.users.editedUser);
+    const [errors, setErrors] = useState({});
+    const [errorsEdited, setErrorsEdited] = useState({});
 
     const formTwoFlag = true;
 
@@ -36,9 +35,6 @@ const Home = () => {
         city: '',
         id: ''
     });
-
-    const [errors, setErrors] = useState({});
-    const [errorFlag, setErrorFlag] = useState(false);
 
     const onChange = (e, city) => {
         const name = city ? city : e.target.name;
@@ -60,16 +56,12 @@ const Home = () => {
             person.surname === user.surname && person.age === user.age && person.city.value === user.city.value).length;
     }
 
-    const sendForm = (event) => {
-        event.preventDefault();
-        for (let name in user) {
-            validate(event, name, user[name], errors, setErrors, setErrorFlag);
-        }
-    }
-
     const addUser = (event) => {
-        sendForm(event);
-        if(!checkSameUser()){
+        event.preventDefault();
+        if(checkSameUser()){
+            setAlert("CREATE_SAME_USER");
+        }
+        if(!checkSameUser() && validate(user, setErrors)){
             dispatch(createUserAction(user));
             dispatch(createTableAction(user));
             setUser({
@@ -79,34 +71,53 @@ const Home = () => {
                 age: '',
                 city: '',
             })
+            setErrors({});
         }
     }
 
     const editUser = (event) => {
-        setLifting(!lifting);
-        sendForm(event);
-        console.log(lifting, 'lifting');
-        dispatch(saveUserAction(userEdited));
+        event.preventDefault();
+        if(validate(userEdited, setErrors, setErrorsEdited, true)){
+            setLifting(!lifting);
+            dispatch(saveUserAction(userEdited));
+            showEditForm(false);
+            setErrorsEdited({});
+        }
+    }
+
+    const closeModalEdited = () => {
         showEditForm(false);
     }
     return (
         <div className="home">
-           <FormState editForm={editForm}
-                      showEditForm={(bool)=>showEditForm(bool)}
-                      errors={errors}
-                      addUser={addUser}
-                      user={user}
-                      options={options}
-                      onChange={onChange}
-                      editedUserFromTable={editedUserFromTable}
-                      userEdited={userEdited}
-                      editUser={editUser}
-                      setUserEdited={setUserEdited}/>
-           <MainTable showModalDelete={showModalDelete}
-                      lifting={lifting}
-                      showEditForm={(bool)=>showEditForm(bool)}/>
-           <FormTwo addUser={addUser} errors={errors} user={user} options={options} onChange={onChange} formTwoFlag={formTwoFlag}/>
-            {/*{modalDelete && <Alert/>}*/}
+            <div className="home__app">
+                <FormState editForm={editForm}
+                           closeModalEdited={closeModalEdited}
+                           errors={errors}
+                           errorsEdited={errorsEdited}
+                           addUser={addUser}
+                           user={user}
+                           options={options}
+                           onChange={onChange}
+                           editedUserFromTable={editedUserFromTable}
+                           userEdited={userEdited}
+                           editUser={editUser}
+                           setUserEdited={setUserEdited}
+                           setAlert={(elem)=>setAlert(elem)}/>
+                {alert &&
+                    <Alert
+                        action={alert}
+                        setAlert={()=>setAlert(false)}/>}
+            </div>
+            <MainTable lifting={lifting}
+                       showEditForm={(bool)=>showEditForm(bool)}
+                       setAlert={(elem)=>setAlert(elem)}/>
+            <FormTwo addUser={addUser}
+                     errors={errors}
+                     user={user}
+                     options={options}
+                     onChange={onChange}
+                     formTwoFlag={formTwoFlag}/>
         </div>
     );
 };
