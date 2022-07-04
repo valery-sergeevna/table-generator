@@ -87,6 +87,7 @@ const Home = () => {
 
     const closeModalEdited = () => {
         showEditForm(false);
+        dispatch(saveUserAction({}));
     }
     return (
         <div className="home">

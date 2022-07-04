@@ -60,16 +60,13 @@ const MainTable = (props) => {
 
     return (
         <div className="container">
-            {originalTable && originalTable.table && originalTable.table.length
-                ?
+            {originalTable && !!originalTable.table && !!originalTable.table.length &&
                 <Table table={originalTable.table}
                        copyTable={()=>{copyTable(originalTable)}}
                        key={originalTable.id}
                        deleteUser={(id)=>deleteUser(originalTable, id)}
                        editUserObj={(user)=>editUserObj(user)}
-                       deleteTableCopy={()=>{deleteTableCopy("REJECT")}}/>
-                :
-                <h4>Users and tables are not found. Please fill out the form.</h4>}
+                       deleteTableCopy={()=>{deleteTableCopy("REJECT")}}/>}
             {copies && !!copies.length && copies.map((elem, index)=>
                 (<Table
                     table={elem.table}
